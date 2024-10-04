@@ -1,20 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { ThemeProvider } from 'styled-components/native'
 
-export default function App() {
+import StyleTheme from './src/theme/StyleTheme'
+import Main from './src/components/Main'
+
+export default function App () {
   return (
-    <View style={styles.container}>
-      <Text>hola j</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <ThemeProvider theme={StyleTheme()}>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+      <Main />
+    </ThemeProvider>
+  )
+}
