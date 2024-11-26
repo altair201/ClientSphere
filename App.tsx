@@ -1,13 +1,13 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components/native'
 
-import StyleTheme from './src/theme/StyleTheme'
+import useStyleTheme from './src/theme/StyleTheme'
 import Main from './src/components/Main'
 
 export default function App () {
+  const theme = useStyleTheme()
   return (
-    <ThemeProvider theme={StyleTheme()}>
-
+    <ThemeProvider theme={theme}>
       <Main />
     </ThemeProvider>
   )

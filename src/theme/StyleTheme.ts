@@ -4,11 +4,13 @@ import { Appearance, ColorSchemeName } from 'react-native'
 import themeDark from './themes/themeDark'
 import themeLight from './themes/themeLight'
 
-export default function StyleTheme () {
-  const [theme, setTheme] = useState(themeLight)
+export default function useStyleTheme () {
+  const [theme, setTheme] = useState(themeDark)
 
   const updateTheme = (colorScheme: ColorSchemeName) => {
-    setTheme(colorScheme === 'dark' ? themeDark : themeLight)
+    if (colorScheme) {
+      setTheme(colorScheme === 'dark' ? themeDark : themeLight)
+    }
   }
 
   useEffect(() => {
